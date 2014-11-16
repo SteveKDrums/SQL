@@ -126,7 +126,7 @@ CREATE VIEW [Weekly_Outgoings_More_Than_AVG_Salary] AS
 SELECT  Employee_First_Name, Employee_Last_Name, Employee_Title, CAST(Salary_Amount AS int) AS [Yearly_Salary], 
 CAST(Holiday_Pay AS int) AS [Yearly_Holiday_Pay], Payment_Frequency,
 CAST(Salary_Amount + Holiday_Pay AS int) / 52  AS [Total_Weekly_Outgoings],
-DATEDIFF(HOUR, 2014-4-9, 2014-4-6) AS [Hours's_Until_Next_Debit],
+DATEDIFF(HOUR, 2014-4-9, 2014-4-6) AS [Hourss_Until_Next_Debit],
 CAST(GETDATE() AS smalldatetime) AS [Date&Time_Of_Query]
 FROM Employees JOIN Salary 
 ON Employees.Employee_ID = Salary.Employee_ID
@@ -531,7 +531,7 @@ CREATE PROC spStudents_Over_20
 AS
 
 SELECT Student_ID, Student_First_Name, Student_Last_Name, Age,
-CAST(GETDATE() AS date) AS [Today's_Date]
+CAST(GETDATE() AS date) AS [Todays_Date]
 FROM Students
 WHERE Age >= 20
 ORDER BY Age;
