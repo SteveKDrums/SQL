@@ -1,0 +1,26 @@
+QUESTION ON DISTINCT
+
+I believe that using SELECT DISTINCT in this context is the correct approach and will retrieve the information required.
+By using SELECT DISTINCT with the first and last name you guarantee that each record will be an individual person.
+This SQL statement can return multiple records of the same name in either first or last name, 
+but the combination of the two columns will never return a multiple full name. 
+
+Example 1
+
+First Name could return  Last Name could return
+
+David				Diaz
+David 				Dunne
+David				Spain
+
+Example 2
+
+First Name could return  Last Name could return
+
+David				Kohlmann
+John				Kohlmann
+Steve				Kohlmann
+
+SELECT returns 847 records (people in this case) and leaves ambiguity to how how many customers are actually in the table. 
+SELECT DISTINCT returns 440 records (people) and this lets the client know exactly how many customers are in the database.
+
